@@ -1,5 +1,5 @@
 {
-  "name": "@blockly/workspace-backpack",
+  "name": "@instant-ar/workspace-backpack",
   "version": "1.0.1",
   "description": "A Blockly plugin that adds Backpack support.",
   "scripts": {
@@ -50,7 +50,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://wombat-dressing-room.appspot.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "eslintConfig": {
     "extends": "@blockly/eslint-config"
