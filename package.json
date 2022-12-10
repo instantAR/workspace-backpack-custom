@@ -1,6 +1,6 @@
 {
   "name": "@instant-ar/workspace-backpack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Blockly plugin that adds Backpack support.",
   "scripts": {
     "audit:fix": "blockly-scripts auditFix",

@@ -452,6 +452,8 @@ export class Backpack extends Blockly.DragTarget {
     const x = Blockly.Xml.blockToDom(block);
     if (x.getAttribute('type') == 'procedures_callnoreturn') {
       x.setAttribute('type', 'custom_procedures');
+    } else if (x.getAttribute('type') == 'procedures_callreturn') {
+      x.setAttribute('type', 'custom_procedures_return');
     }
     return cleanBlockXML(x);
   }
