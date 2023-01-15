@@ -602,10 +602,15 @@ export class Backpack extends Blockly.DragTarget {
     if (!this.isOpenable_()) {
       return;
     }
+    const blocks1 = this.workspace_.getAllBlocks();
     const xml = this.contents_.map((text) => Blockly.Xml.textToDom(text));
-    console.log(xml);
     this.flyout_.show(xml);
     Blockly.Events.fire(new BackpackOpen(true, this.workspace_.id));
+    const blocks2 = this.workspace_.getAllBlocks();
+    const removeBlocks = blocks2.filter((x) => !blocks1.includes(x));
+    for (let i=0; i<removeBlocks.length; i++) {
+      removeBlocks[i].dispose();
+    }
   }
 
   /**
