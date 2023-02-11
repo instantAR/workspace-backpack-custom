@@ -62,9 +62,16 @@ function registerRemoveFromBackpack() {
     },
     callback: function(
         /** @type {!Blockly.ContextMenuRegistry.Scope} */ scope) {
-      const backpack =scope.block.workspace.targetWorkspace
-          .getComponentManager().getComponent('backpack');
-      backpack.removeBlock(scope.block);
+      // const backpack =scope.block.workspace.targetWorkspace
+      //     .getComponentManager().getComponent('backpack');
+      // backpack.removeBlock(scope.block);
+      // alert('Check in console');
+      Blockly.Events.setGroup(true);
+      const loadEvent = new Blockly.Events.Abstract(null);
+      loadEvent.type = 'remove_backpack';
+      loadEvent.workspaceId = scope.block.workspace.targetWorkspace.id;
+      loadEvent.value = scope.block.id;
+      Blockly.Events.fire(loadEvent);
     },
     scopeType: Blockly.ContextMenuRegistry.ScopeType.BLOCK,
     id: 'remove_from_backpack',
